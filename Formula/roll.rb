@@ -32,9 +32,9 @@ class DockerRequirement < Requirement
   end
 
   def self.docker_installed?
-    return (File.exists?("/Applications/Docker.app") || File.exists?("/Applications/OrbStack.app")) &&
-      File.exists?("/usr/local/bin/docker") if OS.mac?
-    return File.exists?("/usr/bin/docker") if OS.linux?
+    return (File.exist?("/Applications/Docker.app") || File.exist?("/Applications/OrbStack.app")) &&
+      File.exist?("/usr/local/bin/docker") if OS.mac?
+    return File.exist?("/usr/bin/docker") if OS.linux?
   end
 
   def self.get_docker_exec
@@ -59,9 +59,9 @@ end
 class Roll < Formula
   desc "RollDev is a CLI utility for working with docker-compose environments"
   homepage "https://www.getroll.dev"
-  version "0.2.6.4"
-  url "https://github.com/dockergiant/rolldev/archive/0.2.6.4.tar.gz"
-  sha256 "c7b957bee9abf8bdb0a297945c4a80b0752427ef2d25e1b25a0bf4d60dde6569"
+  version "0.4.2"
+  url "https://github.com/dockergiant/rolldev/archive/0.4.2.tar.gz"
+  sha256 "0d496c94c1a2cb0cfa0a73bedce5d9b453db2ebe6fc886bb6e9592d37ea79f9c"
   head "https://github.com/dockergiant/rolldev.git", :branch => "main"
 
   depends_on DockerRequirement

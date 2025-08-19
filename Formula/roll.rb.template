@@ -32,9 +32,9 @@ class DockerRequirement < Requirement
   end
 
   def self.docker_installed?
-    return (File.exists?("/Applications/Docker.app") || File.exists?("/Applications/OrbStack.app")) &&
-      File.exists?("/usr/local/bin/docker") if OS.mac?
-    return File.exists?("/usr/bin/docker") if OS.linux?
+    return (File.exist?("/Applications/Docker.app") || File.exist?("/Applications/OrbStack.app")) &&
+      File.exist?("/usr/local/bin/docker") if OS.mac?
+    return File.exist?("/usr/bin/docker") if OS.linux?
   end
 
   def self.get_docker_exec
